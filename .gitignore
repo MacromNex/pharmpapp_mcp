@@ -1,0 +1,38 @@
+# Environments
+env/
+env_py37/
+env_py39/
+.venv/
+venv/
+
+# Cloned upstream repos
+repo/
+
+# Runtime data
+jobs/
+results/
+output/
+logs/
+tmp/
+
+# Build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Claude/AI outputs
+claude_outputs/
+
+# Test outputs
+test_output/
+test_outputs/
+test_results/
+test_job_output/
+test_batch_data/
+
+# OS files
+.DS_Store
+

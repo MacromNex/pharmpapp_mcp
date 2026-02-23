@@ -1,0 +1,38 @@
+{
+  "_description": "Configuration for cyclic peptide descriptor calculation",
+  "_source": "Extracted from examples/use_case_2_calculate_descriptors.py",
+
+  "processing": {
+    "include_3d": false,
+    "include_fingerprints": false,
+    "max_conformers": 1,
+    "optimize_geometry": false
+  },
+
+  "descriptor_types": [
+    "basic",
+    "topological",
+    "constitutional",
+    "physicochemical"
+  ],
+
+  "quality_control": {
+    "validate_cyclic_peptide": true,
+    "skip_invalid_molecules": true,
+    "calculate_lipinski_violations": true,
+    "calculate_oprea_violations": true,
+    "include_pains_alerts": true
+  },
+
+  "output": {
+    "format": "csv",
+    "include_metadata": true,
+    "include_smiles": true,
+    "include_validation": true
+  },
+
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(levelname)s - %(message)s"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "_description": "Configuration for batch analysis of multiple permeability models",
+  "_source": "Extracted from examples/use_case_3_batch_analysis.py",
+
+  "models": {
+    "models_to_test": [
+      "rrck_c",
+      "pampa_c",
+      "caco2_l",
+      "caco2_c",
+      "caco2_a"
+    ],
+    "test_size": 0.2,
+    "random_state": 42
+  },
+
+  "analysis": {
+    "calculate_correlations": true,
+    "compare_performance": true,
+    "identify_best_model": true,
+    "calculate_ensemble": false
+  },
+
+  "plotting": {
+    "create_plots": true,
+    "plot_correlations": true,
+    "plot_distributions": true,
+    "plot_performance": true,
+    "save_format": "png",
+    "dpi": 300
+  },
+
+  "output": {
+    "save_individual_predictions": true,
+    "save_summary_statistics": true,
+    "save_analysis_metadata": true,
+    "create_report": true
+  },
+
+  "quality_control": {
+    "min_successful_models": 1,
+    "skip_failed_models": true,
+    "validate_inputs": true,
+    "check_feature_compatibility": true
+  },
+
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(levelname)s - %(message)s"
+  }
+}
