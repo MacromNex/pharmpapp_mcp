@@ -1,0 +1,1617 @@
+{
+  "test_date": "2026-01-01T04:40:35.149097",
+  "tests": {
+    "Server Startup": {
+      "status": "passed",
+      "result": {
+        "tools_found": 13,
+        "tools_list": [
+          "get_job_status",
+          "get_job_result",
+          "get_job_log",
+          "cancel_job",
+          "list_jobs",
+          "cleanup_old_jobs",
+          "calculate_cyclic_peptide_descriptors",
+          "predict_cyclic_peptide_permeability",
+          "submit_batch_analysis",
+          "submit_large_descriptor_calculation",
+          "get_available_models",
+          "validate_input_file",
+          "get_example_data"
+        ],
+        "expected_tools": [
+          "get_job_status",
+          "validate_input_file",
+          "list_jobs",
+          "submit_batch_analysis",
+          "calculate_cyclic_peptide_descriptors",
+          "get_job_result",
+          "cleanup_old_jobs",
+          "predict_cyclic_peptide_permeability",
+          "submit_large_descriptor_calculation",
+          "get_available_models",
+          "cancel_job",
+          "get_example_data",
+          "get_job_log"
+        ]
+      },
+      "error": null
+    },
+    "RDKit Import": {
+      "status": "passed",
+      "result": {
+        "rdkit_version": "available",
+        "test_smiles": "CCO"
+      },
+      "error": null
+    },
+    "Validate Input File": {
+      "status": "passed",
+      "result": {
+        "status": "success",
+        "file_path": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/examples/data/demo_cyclic_peptides.smi",
+        "file_size": 350,
+        "file_type": ".smi",
+        "molecule_count": 3,
+        "format": "SMILES"
+      },
+      "error": null
+    },
+    "Get Example Data": {
+      "status": "passed",
+      "result": {
+        "status": "success",
+        "examples_dir": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/examples/data",
+        "files": {
+          "example for Caco2_L.csv": {
+            "path": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/examples/data/example for Caco2_L.csv",
+            "size": 6050,
+            "type": ".csv",
+            "rows": 9,
+            "columns": 83
+          },
+          "demo_cyclic_peptides.smi": {
+            "path": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/examples/data/demo_cyclic_peptides.smi",
+            "size": 350,
+            "type": ".smi"
+          },
+          "example for RRCK-C.csv": {
+            "path": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/examples/data/example for RRCK-C.csv",
+            "size": 8341,
+            "type": ".csv",
+            "rows": 10,
+            "columns": 104
+          },
+          "example for Caco2_C.csv": {
+            "path": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/examples/data/example for Caco2_C.csv",
+            "size": 5799,
+            "type": ".csv",
+            "rows": 10,
+            "columns": 80
+          },
+          "demo_cyclic_peptides_config.json": {
+            "path": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/examples/data/demo_cyclic_peptides_config.json",
+            "size": 56,
+            "type": ".json"
+          },
+          "example for PAMPA-C.csv": {
+            "path": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/examples/data/example for PAMPA-C.csv",
+            "size": 5871,
+            "type": ".csv",
+            "rows": 10,
+            "columns": 72
+          },
+          "example for Caco2_A.csv": {
+            "path": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/examples/data/example for Caco2_A.csv",
+            "size": 6371,
+            "type": ".csv",
+            "rows": 9,
+            "columns": 93
+          }
+        }
+      },
+      "error": null
+    },
+    "Get Available Models": {
+      "status": "passed",
+      "result": {
+        "status": "success",
+        "models": {
+          "rrck_c": {
+            "name": "RRCK-C",
+            "algorithm": "SVR",
+            "num_descriptors": 103,
+            "example_file": "examples/data/example for RRCK-C.csv",
+            "descriptors": [
+              "apol",
+              "ast_violation",
+              "a_acc",
+              "a_aro",
+              "a_don",
+              "a_donacc",
+              "a_heavy",
+              "a_hyd",
+              "a_IC",
+              "a_nC",
+              "a_nF",
+              "a_nH",
+              "a_nN",
+              "a_nO",
+              "a_nS",
+              "balabanJ",
+              "BCUT_PEOE_1",
+              "BCUT_PEOE_2",
+              "BCUT_SLOGP_1",
+              "BCUT_SLOGP_2",
+              "BCUT_SMR_1",
+              "bpol",
+              "b_1rotN",
+              "b_double",
+              "b_max1len",
+              "chi1v",
+              "chi1v_C",
+              "chi1_C",
+              "chiral",
+              "chiral_u",
+              "diameter",
+              "h_ema",
+              "h_emd",
+              "h_emd_C",
+              "h_logD",
+              "h_logP",
+              "h_logS",
+              "h_log_pbo",
+              "h_pavgQ",
+              "h_pKa",
+              "h_pKb",
+              "h_pstrain",
+              "Kier2",
+              "Kier3",
+              "KierA2",
+              "KierFlex",
+              "lip_acc",
+              "lip_violation",
+              "logP(o/w)",
+              "logS",
+              "opr_brigid",
+              "opr_nring",
+              "opr_nrot",
+              "opr_violation",
+              "PEOE_PC+",
+              "PEOE_PC-",
+              "PEOE_VSA+0",
+              "PEOE_VSA+1",
+              "PEOE_VSA+2",
+              "PEOE_VSA+3",
+              "PEOE_VSA+4",
+              "PEOE_VSA+5",
+              "PEOE_VSA+6",
+              "PEOE_VSA-0",
+              "PEOE_VSA-1",
+              "PEOE_VSA-2",
+              "PEOE_VSA-3",
+              "PEOE_VSA-4",
+              "PEOE_VSA-5",
+              "PEOE_VSA-6",
+              "PEOE_VSA_HYD",
+              "PEOE_VSA_NEG",
+              "PEOE_VSA_PNEG",
+              "PEOE_VSA_POL",
+              "PEOE_VSA_POS",
+              "PEOE_VSA_PPOS",
+              "petitjeanSC",
+              "radius",
+              "reactive",
+              "rsynth",
+              "SlogP",
+              "SlogP_VSA0",
+              "SlogP_VSA1",
+              "SlogP_VSA2",
+              "SlogP_VSA3",
+              "SlogP_VSA4",
+              "SlogP_VSA5",
+              "SlogP_VSA6",
+              "SlogP_VSA7",
+              "SlogP_VSA8",
+              "SlogP_VSA9",
+              "SMR_VSA1",
+              "SMR_VSA2",
+              "SMR_VSA3",
+              "SMR_VSA4",
+              "SMR_VSA5",
+              "SMR_VSA6",
+              "SMR_VSA7",
+              "TPSA",
+              "VDistEq",
+              "vsa_don",
+              "weinerPath",
+              "weinerPol"
+            ]
+          },
+          "pampa_c": {
+            "name": "PAMPA-C",
+            "algorithm": "LightGBM",
+            "num_descriptors": 77,
+            "example_file": "examples/data/example for PAMPA-C.csv",
+            "descriptors": [
+              "a_acc",
+              "a_aro",
+              "a_don",
+              "a_donacc",
+              "a_heavy",
+              "a_hyd",
+              "a_IC",
+              "a_nC",
+              "a_nF",
+              "a_nH",
+              "a_nN",
+              "a_nO",
+              "a_nS",
+              "apol",
+              "ast_violation",
+              "balabanJ",
+              "BCUT_PEOE_1",
+              "BCUT_PEOE_2",
+              "BCUT_SLOGP_1",
+              "BCUT_SLOGP_2",
+              "bpol",
+              "b_1rotN",
+              "b_double",
+              "chi1v",
+              "chi1v_C",
+              "chi1_C",
+              "chiral",
+              "chiral_u",
+              "diameter",
+              "GCUT_PEOE_3",
+              "h_ema",
+              "h_emd",
+              "h_emd_C",
+              "h_logD",
+              "h_logP",
+              "h_logS",
+              "h_pavgQ",
+              "h_pKa",
+              "h_pKb",
+              "h_pstates",
+              "Kier2",
+              "Kier3",
+              "KierA2",
+              "KierFlex",
+              "lip_acc",
+              "lip_violation",
+              "logP(o/w)",
+              "logS",
+              "opr_brigid",
+              "opr_nring",
+              "opr_nrot",
+              "opr_violation",
+              "PEOE_PC+",
+              "PEOE_PC-",
+              "PEOE_VSA+0",
+              "PEOE_VSA+1",
+              "PEOE_VSA+2",
+              "PEOE_VSA+3",
+              "PEOE_VSA+4",
+              "PEOE_VSA+5",
+              "PEOE_VSA+6",
+              "PEOE_VSA-0",
+              "PEOE_VSA-1",
+              "PEOE_VSA-2",
+              "PEOE_VSA-3",
+              "PEOE_VSA-4",
+              "PEOE_VSA-5",
+              "PEOE_VSA-6",
+              "petitjeanSC",
+              "radius",
+              "reactive",
+              "rsynth",
+              "VAdjMa",
+              "VDistEq",
+              "vsa_don",
+              "weinerPath",
+              "weinerPol"
+            ]
+          },
+          "caco2_l": {
+            "name": "Caco2-L",
+            "algorithm": "RandomForest",
+            "num_descriptors": 94,
+            "example_file": "examples/data/example for Caco2_L.csv",
+            "descriptors": [
+              "a_acc",
+              "a_aro",
+              "a_don",
+              "a_donacc",
+              "a_heavy",
+              "a_hyd",
+              "a_IC",
+              "a_nC",
+              "a_nF",
+              "a_nH",
+              "a_nN",
+              "a_nO",
+              "a_nS",
+              "apol",
+              "ast_violation",
+              "balabanJ",
+              "BCUT_PEOE_1",
+              "BCUT_PEOE_2",
+              "BCUT_SLOGP_1",
+              "BCUT_SLOGP_2",
+              "bpol",
+              "b_1rotN",
+              "b_double",
+              "b_max1len",
+              "chi1v",
+              "chi1v_C",
+              "chi1_C",
+              "chiral",
+              "chiral_u",
+              "diameter",
+              "h_ema",
+              "h_emd",
+              "h_emd_C",
+              "h_logD",
+              "h_logP",
+              "h_logS",
+              "h_log_pbo",
+              "h_pavgQ",
+              "h_pKa",
+              "h_pKb",
+              "h_pstrain",
+              "Kier2",
+              "Kier3",
+              "KierA2",
+              "KierFlex",
+              "lip_acc",
+              "lip_violation",
+              "logP(o/w)",
+              "logS",
+              "opr_brigid",
+              "opr_nring",
+              "opr_nrot",
+              "opr_violation",
+              "PEOE_PC+",
+              "PEOE_PC-",
+              "PEOE_VSA+0",
+              "PEOE_VSA+1",
+              "PEOE_VSA+2",
+              "PEOE_VSA+3",
+              "PEOE_VSA+4",
+              "PEOE_VSA+5",
+              "PEOE_VSA+6",
+              "PEOE_VSA-0",
+              "PEOE_VSA-1",
+              "PEOE_VSA-2",
+              "PEOE_VSA-3",
+              "PEOE_VSA-4",
+              "PEOE_VSA-5",
+              "PEOE_VSA-6",
+              "PEOE_VSA_HYD",
+              "PEOE_VSA_NEG",
+              "PEOE_VSA_PNEG",
+              "PEOE_VSA_POL",
+              "PEOE_VSA_POS",
+              "PEOE_VSA_PPOS",
+              "petitjeanSC",
+              "radius",
+              "reactive",
+              "rsynth",
+              "SlogP",
+              "SlogP_VSA0",
+              "SlogP_VSA1",
+              "SlogP_VSA2",
+              "SlogP_VSA3",
+              "SlogP_VSA4",
+              "SlogP_VSA5",
+              "SlogP_VSA6",
+              "SlogP_VSA7",
+              "SlogP_VSA8",
+              "SlogP_VSA9",
+              "VDistEq",
+              "vsa_don",
+              "weinerPath",
+              "weinerPol"
+            ]
+          },
+          "caco2_c": {
+            "name": "Caco2-C",
+            "algorithm": "RandomForest",
+            "num_descriptors": 94,
+            "example_file": "examples/data/example for Caco2_C.csv",
+            "descriptors": [
+              "a_acc",
+              "a_aro",
+              "a_don",
+              "a_donacc",
+              "a_heavy",
+              "a_hyd",
+              "a_IC",
+              "a_nC",
+              "a_nF",
+              "a_nH",
+              "a_nN",
+              "a_nO",
+              "a_nS",
+              "apol",
+              "ast_violation",
+              "balabanJ",
+              "BCUT_PEOE_1",
+              "BCUT_PEOE_2",
+              "BCUT_SLOGP_1",
+              "BCUT_SLOGP_2",
+              "bpol",
+              "b_1rotN",
+              "b_double",
+              "b_max1len",
+              "chi1v",
+              "chi1v_C",
+              "chi1_C",
+              "chiral",
+              "chiral_u",
+              "diameter",
+              "h_ema",
+              "h_emd",
+              "h_emd_C",
+              "h_logD",
+              "h_logP",
+              "h_logS",
+              "h_log_pbo",
+              "h_pavgQ",
+              "h_pKa",
+              "h_pKb",
+              "h_pstrain",
+              "Kier2",
+              "Kier3",
+              "KierA2",
+              "KierFlex",
+              "lip_acc",
+              "lip_violation",
+              "logP(o/w)",
+              "logS",
+              "opr_brigid",
+              "opr_nring",
+              "opr_nrot",
+              "opr_violation",
+              "PEOE_PC+",
+              "PEOE_PC-",
+              "PEOE_VSA+0",
+              "PEOE_VSA+1",
+              "PEOE_VSA+2",
+              "PEOE_VSA+3",
+              "PEOE_VSA+4",
+              "PEOE_VSA+5",
+              "PEOE_VSA+6",
+              "PEOE_VSA-0",
+              "PEOE_VSA-1",
+              "PEOE_VSA-2",
+              "PEOE_VSA-3",
+              "PEOE_VSA-4",
+              "PEOE_VSA-5",
+              "PEOE_VSA-6",
+              "PEOE_VSA_HYD",
+              "PEOE_VSA_NEG",
+              "PEOE_VSA_PNEG",
+              "PEOE_VSA_POL",
+              "PEOE_VSA_POS",
+              "PEOE_VSA_PPOS",
+              "petitjeanSC",
+              "radius",
+              "reactive",
+              "rsynth",
+              "SlogP",
+              "SlogP_VSA0",
+              "SlogP_VSA1",
+              "SlogP_VSA2",
+              "SlogP_VSA3",
+              "SlogP_VSA4",
+              "SlogP_VSA5",
+              "SlogP_VSA6",
+              "SlogP_VSA7",
+              "SlogP_VSA8",
+              "SlogP_VSA9",
+              "VDistEq",
+              "vsa_don",
+              "weinerPath",
+              "weinerPol"
+            ]
+          },
+          "caco2_a": {
+            "name": "Caco2-A",
+            "algorithm": "RandomForest",
+            "num_descriptors": 103,
+            "example_file": "examples/data/example for Caco2_A.csv",
+            "descriptors": [
+              "a_acc",
+              "a_aro",
+              "a_don",
+              "a_donacc",
+              "a_heavy",
+              "a_hyd",
+              "a_IC",
+              "a_nC",
+              "a_nF",
+              "a_nH",
+              "a_nN",
+              "a_nO",
+              "a_nS",
+              "apol",
+              "ast_violation",
+              "balabanJ",
+              "BCUT_PEOE_1",
+              "BCUT_PEOE_2",
+              "BCUT_SLOGP_1",
+              "BCUT_SLOGP_2",
+              "BCUT_SMR_1",
+              "bpol",
+              "b_1rotN",
+              "b_double",
+              "b_max1len",
+              "chi1v",
+              "chi1v_C",
+              "chi1_C",
+              "chiral",
+              "chiral_u",
+              "diameter",
+              "h_ema",
+              "h_emd",
+              "h_emd_C",
+              "h_logD",
+              "h_logP",
+              "h_logS",
+              "h_log_pbo",
+              "h_pavgQ",
+              "h_pKa",
+              "h_pKb",
+              "h_pstrain",
+              "Kier2",
+              "Kier3",
+              "KierA2",
+              "KierFlex",
+              "lip_acc",
+              "lip_violation",
+              "logP(o/w)",
+              "logS",
+              "opr_brigid",
+              "opr_nring",
+              "opr_nrot",
+              "opr_violation",
+              "PEOE_PC+",
+              "PEOE_PC-",
+              "PEOE_VSA+0",
+              "PEOE_VSA+1",
+              "PEOE_VSA+2",
+              "PEOE_VSA+3",
+              "PEOE_VSA+4",
+              "PEOE_VSA+5",
+              "PEOE_VSA+6",
+              "PEOE_VSA-0",
+              "PEOE_VSA-1",
+              "PEOE_VSA-2",
+              "PEOE_VSA-3",
+              "PEOE_VSA-4",
+              "PEOE_VSA-5",
+              "PEOE_VSA-6",
+              "PEOE_VSA_HYD",
+              "PEOE_VSA_NEG",
+              "PEOE_VSA_PNEG",
+              "PEOE_VSA_POL",
+              "PEOE_VSA_POS",
+              "PEOE_VSA_PPOS",
+              "petitjeanSC",
+              "radius",
+              "reactive",
+              "rsynth",
+              "SlogP",
+              "SlogP_VSA0",
+              "SlogP_VSA1",
+              "SlogP_VSA2",
+              "SlogP_VSA3",
+              "SlogP_VSA4",
+              "SlogP_VSA5",
+              "SlogP_VSA6",
+              "SlogP_VSA7",
+              "SlogP_VSA8",
+              "SlogP_VSA9",
+              "SMR_VSA1",
+              "SMR_VSA2",
+              "SMR_VSA3",
+              "SMR_VSA4",
+              "SMR_VSA5",
+              "SMR_VSA6",
+              "SMR_VSA7",
+              "TPSA",
+              "VDistEq",
+              "vsa_don",
+              "weinerPath",
+              "weinerPol"
+            ]
+          }
+        },
+        "total_models": 5
+      },
+      "error": null
+    },
+    "Calculate Descriptors": {
+      "status": "passed",
+      "result": {
+        "status": "success",
+        "result": {
+          "type": "DataFrame",
+          "shape": [
+            3,
+            147
+          ],
+          "columns": [
+            "Molecule_ID",
+            "SMILES",
+            "Is_Cyclic_Peptide",
+            "MolWt",
+            "LogP",
+            "NumHBD",
+            "NumHBA",
+            "TPSA",
+            "NumRotatableBonds",
+            "NumAromaticRings",
+            "NumSaturatedRings",
+            "NumAliphaticRings",
+            "RingCount",
+            "NumHeavyAtoms",
+            "NumAtoms",
+            "NumBonds",
+            "MolMR",
+            "BalabanJ",
+            "Chi0v",
+            "Chi1v",
+            "Chi2v",
+            "Chi3v",
+            "Chi4v",
+            "Chi0n",
+            "Chi1n",
+            "Chi2n",
+            "Chi3n",
+            "Chi4n",
+            "Kappa1",
+            "Kappa2",
+            "Kappa3",
+            "BertzCT",
+            "HallKierAlpha",
+            "Ipc",
+            "MaxPartialCharge",
+            "MinPartialCharge",
+            "MaxAbsPartialCharge",
+            "MinAbsPartialCharge",
+            "LabuteASA",
+            "PEOE_VSA1",
+            "PEOE_VSA2",
+            "PEOE_VSA3",
+            "PEOE_VSA4",
+            "PEOE_VSA5",
+            "PEOE_VSA6",
+            "PEOE_VSA7",
+            "PEOE_VSA8",
+            "PEOE_VSA9",
+            "PEOE_VSA10",
+            "PEOE_VSA11",
+            "PEOE_VSA12",
+            "PEOE_VSA13",
+            "PEOE_VSA14",
+            "SlogP_VSA1",
+            "SlogP_VSA2",
+            "SlogP_VSA3",
+            "SlogP_VSA4",
+            "SlogP_VSA5",
+            "SlogP_VSA6",
+            "SlogP_VSA7",
+            "SlogP_VSA8",
+            "SlogP_VSA9",
+            "SlogP_VSA10",
+            "SlogP_VSA11",
+            "SlogP_VSA12",
+            "fr_NH0",
+            "fr_NH1",
+            "fr_NH2",
+            "fr_Ar_N",
+            "fr_Ar_NH",
+            "fr_Ar_OH",
+            "fr_ArN",
+            "fr_C_O",
+            "fr_C_O_noCOO",
+            "fr_COO",
+            "fr_COO2",
+            "fr_N_O",
+            "fr_Ndealkylation1",
+            "fr_Ndealkylation2",
+            "fr_Nhpyrrole",
+            "fr_SH",
+            "fr_aldehyde",
+            "fr_alkyl_carbamate",
+            "fr_alkyl_halide",
+            "fr_allylic_oxid",
+            "fr_amide",
+            "fr_amidine",
+            "fr_aniline",
+            "fr_aryl_methyl",
+            "fr_azide",
+            "fr_azo",
+            "fr_barbitur",
+            "fr_benzene",
+            "fr_benzodiazepine",
+            "fr_bicyclic",
+            "fr_diazo",
+            "fr_dihydropyridine",
+            "fr_epoxide",
+            "fr_ester",
+            "fr_ether",
+            "fr_furan",
+            "fr_guanido",
+            "fr_halogen",
+            "fr_hdrzine",
+            "fr_hdrzone",
+            "fr_imidazole",
+            "fr_imide",
+            "fr_isocyan",
+            "fr_isothiocyan",
+            "fr_ketone",
+            "fr_ketone_Topliss",
+            "fr_lactam",
+            "fr_lactone",
+            "fr_methoxy",
+            "fr_morpholine",
+            "fr_nitrile",
+            "fr_nitro",
+            "fr_nitro_arom",
+            "fr_nitro_arom_nonortho",
+            "fr_nitroso",
+            "fr_oxazole",
+            "fr_oxime",
+            "fr_para_hydroxylation",
+            "fr_phenol",
+            "fr_phenol_noOrthoHbond",
+            "fr_phos_acid",
+            "fr_phos_ester",
+            "fr_piperdine",
+            "fr_piperzine",
+            "fr_priamide",
+            "fr_prisulfonamd",
+            "fr_pyridine",
+            "fr_quatN",
+            "fr_sulfide",
+            "fr_sulfonamd",
+            "fr_sulfone",
+            "fr_term_acetylene",
+            "fr_tetrazole",
+            "fr_thiazole",
+            "fr_thiocyan",
+            "fr_thiophene",
+            "fr_unbrch_alkane",
+            "fr_urea",
+            "QED",
+            "lipinski_violations",
+            "oprea_violations",
+            "pains_alerts"
+          ],
+          "preview": {
+            "Molecule_ID": {
+              "0": "cyclic_peptide_1",
+              "1": "cyclic_peptide_2",
+              "2": "cyclic_peptide_3"
+            },
+            "SMILES": {
+              "0": "C1C[C@H](NC(=O)[C@H](NC(=O)[C@H](NC1=O)CC2=CC=CC=C2)CC3=CC=C(C=C3)O)CC(C)C",
+              "1": "C[C@H]1NC(=O)[C@H](NC(=O)[C@H](NC(=O)[C@H](NC(=O)[C@H](NC1=O)CC2=CC=CC=C2)CC(C)C)CC3=CC=C(C=C3)O)CC4=CNC5=CC=CC=C54",
+              "2": "CC[C@H](C)[C@H]1NC(=O)[C@H](NC(=O)[C@H](NC(=O)[C@H](NC(=O)[C@H](NC1=O)C)CC2=CC=CC=C2)CC(C)C)CC3=CC=C(C=C3)O"
+            },
+            "Is_Cyclic_Peptide": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "MolWt": {
+              "0": 451.56700000000023,
+              "1": 680.8060000000003,
+              "2": 607.7520000000003
+            },
+            "LogP": {
+              "0": 2.471700000000001,
+              "1": 2.4050000000000047,
+              "2": 1.727100000000005
+            },
+            "NumHBD": {
+              "0": 4,
+              "1": 7,
+              "2": 6
+            },
+            "NumHBA": {
+              "0": 4,
+              "1": 6,
+              "2": 6
+            },
+            "TPSA": {
+              "0": 107.53000000000002,
+              "1": 181.51999999999998,
+              "2": 165.73
+            },
+            "NumRotatableBonds": {
+              "0": 6,
+              "1": 8,
+              "2": 8
+            },
+            "NumAromaticRings": {
+              "0": 2,
+              "1": 4,
+              "2": 2
+            },
+            "NumSaturatedRings": {
+              "0": 1,
+              "1": 1,
+              "2": 1
+            },
+            "NumAliphaticRings": {
+              "0": 1,
+              "1": 1,
+              "2": 1
+            },
+            "RingCount": {
+              "0": 3,
+              "1": 5,
+              "2": 3
+            },
+            "NumHeavyAtoms": {
+              "0": 33,
+              "1": 50,
+              "2": 44
+            },
+            "NumAtoms": {
+              "0": 33,
+              "1": 50,
+              "2": 44
+            },
+            "NumBonds": {
+              "0": 35,
+              "1": 54,
+              "2": 46
+            },
+            "MolMR": {
+              "0": 126.43790000000003,
+              "1": 188.7419999999996,
+              "2": 166.19429999999969
+            },
+            "BalabanJ": {
+              "0": 1.855240535256522,
+              "1": 1.5203152326443683,
+              "2": 2.0326724106617586
+            },
+            "Chi0v": {
+              "0": 19.213045872289424,
+              "1": 28.363887556357984,
+              "2": 26.054486479599476
+            },
+            "Chi1v": {
+              "0": 11.518007876467104,
+              "1": 16.85168264747391,
+              "2": 15.211219102210896
+            },
+            "Chi2v": {
+              "0": 9.115303993341763,
+              "1": 13.228437565051458,
+              "2": 11.975433312942082
+            },
+            "Chi3v": {
+              "0": 5.765672250186776,
+              "1": 8.748847969729416,
+              "2": 7.810127607170581
+            },
+            "Chi4v": {
+              "0": 4.09997531509599,
+              "1": 6.061873241557673,
+              "2": 5.004835972032842
+            },
+            "Chi0n": {
+              "0": 19.213045872289424,
+              "1": 28.363887556357984,
+              "2": 26.054486479599476
+            },
+            "Chi1n": {
+              "0": 11.518007876467104,
+              "1": 16.85168264747391,
+              "2": 15.211219102210896
+            },
+            "Chi2n": {
+              "0": 9.115303993341763,
+              "1": 13.228437565051458,
+              "2": 11.975433312942082
+            },
+            "Chi3n": {
+              "0": 5.765672250186776,
+              "1": 8.748847969729416,
+              "2": 7.810127607170581
+            },
+            "Chi4n": {
+              "0": 4.09997531509599,
+              "1": 6.061873241557673,
+              "2": 5.004835972032842
+            },
+            "Kappa1": {
+              "0": 24.295538060690465,
+              "1": 35.651587335537045,
+              "2": 34.084522809683214
+            },
+            "Kappa2": {
+              "0": 11.49599063937995,
+              "1": 16.16601585221511,
+              "2": 15.88445921814982
+            },
+            "Kappa3": {
+              "0": 7.627432997622506,
+              "1": 9.276653490436024,
+              "2": 9.819568857020375
+            },
+            "BertzCT": {
+              "0": 943.7691745423049,
+              "1": 1822.3040557590698,
+              "2": 1299.5069909307351
+            },
+            "HallKierAlpha": {
+              "0": -3.349999999999999,
+              "1": -5.649999999999999,
+              "2": -4.409999999999999
+            },
+            "Ipc": {
+              "0": 18107340.296007518,
+              "1": 104555977001.30026,
+              "2": 2540360621.0400624
+            },
+            "MaxPartialCharge": {
+              "0": 0.24308194573846367,
+              "1": 0.2430833992661791,
+              "2": 0.2430821443364674
+            },
+            "MinPartialCharge": {
+              "0": -0.5079666451556014,
+              "1": -0.5079666451556014,
+              "2": -0.5079666451556014
+            },
+            "MaxAbsPartialCharge": {
+              "0": 0.5079666451556014,
+              "1": 0.5079666451556014,
+              "2": 0.5079666451556014
+            },
+            "MinAbsPartialCharge": {
+              "0": 0.24308194573846367,
+              "1": 0.2430833992661791,
+              "2": 0.2430821443364674
+            },
+            "LabuteASA": {
+              "0": 194.52024237673572,
+              "1": 290.35069856043924,
+              "2": 258.4976057448156
+            },
+            "PEOE_VSA1": {
+              "0": 21.056893206859698,
+              "1": 36.67444893581957,
+              "2": 31.690470414872358
+            },
+            "PEOE_VSA2": {
+              "0": 14.383611552215466,
+              "1": 23.97268592035911,
+              "2": 23.97268592035911
+            },
+            "PEOE_VSA3": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "PEOE_VSA4": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "PEOE_VSA5": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "PEOE_VSA6": {
+              "0": 56.31204387861251,
+              "1": 74.51114508399735,
+              "2": 76.58033990091978
+            },
+            "PEOE_VSA7": {
+              "0": 42.01918641233062,
+              "1": 54.15192054925384,
+              "2": 48.44000803525663
+            },
+            "PEOE_VSA8": {
+              "0": 25.30430569792599,
+              "1": 36.36223337247216,
+              "2": 12.841643245852019
+            },
+            "PEOE_VSA9": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "PEOE_VSA10": {
+              "0": 17.833193491579827,
+              "1": 35.95871597902371,
+              "2": 35.95871597902371
+            },
+            "PEOE_VSA11": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "PEOE_VSA12": {
+              "0": 17.721539188054518,
+              "1": 29.535898646757527,
+              "2": 29.535898646757527
+            },
+            "PEOE_VSA13": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "PEOE_VSA14": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "SlogP_VSA1": {
+              "0": 15.950365812018994,
+              "1": 26.583943020031654,
+              "2": 26.583943020031654
+            },
+            "SlogP_VSA2": {
+              "0": 40.953589070339106,
+              "1": 69.83560870828524,
+              "2": 64.85163018733803
+            },
+            "SlogP_VSA3": {
+              "0": 27.225254798067485,
+              "1": 43.23515078913714,
+              "2": 36.814329166211124
+            },
+            "SlogP_VSA4": {
+              "0": 5.917906046161393,
+              "1": 5.917906046161393,
+              "2": 11.835812092322787
+            },
+            "SlogP_VSA5": {
+              "0": 44.23684225155327,
+              "1": 43.882387697088866,
+              "2": 58.58723222769912
+            },
+            "SlogP_VSA6": {
+              "0": 54.59730361615449,
+              "1": 85.05961546161403,
+              "2": 54.59730361615449
+            },
+            "SlogP_VSA7": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "SlogP_VSA8": {
+              "0": 0.0,
+              "1": 10.902924932081056,
+              "2": 0.0
+            },
+            "SlogP_VSA9": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "SlogP_VSA10": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "SlogP_VSA11": {
+              "0": 5.749511833283905,
+              "1": 5.749511833283905,
+              "2": 5.749511833283905
+            },
+            "SlogP_VSA12": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "fr_NH0": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_NH1": {
+              "0": 3,
+              "1": 6,
+              "2": 5
+            },
+            "fr_NH2": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_Ar_N": {
+              "0": 0,
+              "1": 1,
+              "2": 0
+            },
+            "fr_Ar_NH": {
+              "0": 0,
+              "1": 1,
+              "2": 0
+            },
+            "fr_Ar_OH": {
+              "0": 1,
+              "1": 1,
+              "2": 1
+            },
+            "fr_ArN": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_C_O": {
+              "0": 3,
+              "1": 5,
+              "2": 5
+            },
+            "fr_C_O_noCOO": {
+              "0": 3,
+              "1": 5,
+              "2": 5
+            },
+            "fr_COO": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_COO2": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_N_O": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_Ndealkylation1": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_Ndealkylation2": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_Nhpyrrole": {
+              "0": 0,
+              "1": 1,
+              "2": 0
+            },
+            "fr_SH": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_aldehyde": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_alkyl_carbamate": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_alkyl_halide": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_allylic_oxid": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_amide": {
+              "0": 3,
+              "1": 5,
+              "2": 5
+            },
+            "fr_amidine": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_aniline": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_aryl_methyl": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_azide": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_azo": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_barbitur": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_benzene": {
+              "0": 2,
+              "1": 3,
+              "2": 2
+            },
+            "fr_benzodiazepine": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_bicyclic": {
+              "0": 0,
+              "1": 1,
+              "2": 0
+            },
+            "fr_diazo": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_dihydropyridine": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_epoxide": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_ester": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_ether": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_furan": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_guanido": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_halogen": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_hdrzine": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_hdrzone": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_imidazole": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_imide": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_isocyan": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_isothiocyan": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_ketone": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_ketone_Topliss": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_lactam": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_lactone": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_methoxy": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_morpholine": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_nitrile": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_nitro": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_nitro_arom": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_nitro_arom_nonortho": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_nitroso": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_oxazole": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_oxime": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_para_hydroxylation": {
+              "0": 0,
+              "1": 1,
+              "2": 0
+            },
+            "fr_phenol": {
+              "0": 1,
+              "1": 1,
+              "2": 1
+            },
+            "fr_phenol_noOrthoHbond": {
+              "0": 1,
+              "1": 1,
+              "2": 1
+            },
+            "fr_phos_acid": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_phos_ester": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_piperdine": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_piperzine": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_priamide": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_prisulfonamd": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_pyridine": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_quatN": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_sulfide": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_sulfonamd": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_sulfone": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_term_acetylene": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_tetrazole": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_thiazole": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_thiocyan": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_thiophene": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_unbrch_alkane": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "fr_urea": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            },
+            "QED": {
+              "0": 0.5411625669011033,
+              "1": 0.1501003470260196,
+              "2": 0.26747424503472583
+            },
+            "lipinski_violations": {
+              "0": 0,
+              "1": 2,
+              "2": 2
+            },
+            "oprea_violations": {
+              "0": 0,
+              "1": 2,
+              "2": 2
+            },
+            "pains_alerts": {
+              "0": 0,
+              "1": 0,
+              "2": 0
+            }
+          }
+        },
+        "output_file": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/test_descriptors.csv",
+        "metadata": {
+          "input_file": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/examples/data/demo_cyclic_peptides.smi",
+          "molecules_processed": 3,
+          "descriptors_calculated": 144,
+          "config": {
+            "include_3d": false,
+            "include_fingerprints": false,
+            "max_conformers": 1,
+            "optimize_geometry": false,
+            "descriptor_types": [
+              "basic",
+              "topological",
+              "constitutional",
+              "physicochemical"
+            ]
+          }
+        },
+        "output_lines": 4,
+        "output_file_created": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/test_descriptors.csv"
+      },
+      "error": null
+    },
+    "Predict Permeability": {
+      "status": "passed",
+      "result": {
+        "status": "skipped",
+        "reason": "Missing required descriptors for PAMPA model",
+        "error": "Invalid input: Too many missing descriptors. Available: 0/77"
+      },
+      "error": null
+    },
+    "Job Management System": {
+      "status": "passed",
+      "result": {
+        "status": "success",
+        "jobs": [
+          {
+            "job_id": "c4d88ce2",
+            "job_name": "test_job",
+            "status": "running",
+            "submitted_at": "2026-01-01T04:40:00.622621",
+            "script": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/scripts/calculate_descriptors.py"
+          },
+          {
+            "job_id": "405a7015",
+            "job_name": "test_fixed",
+            "status": "completed",
+            "submitted_at": "2026-01-01T04:31:20.057686",
+            "script": "scripts/calculate_descriptors.py",
+            "runtime_seconds": 0.615932
+          },
+          {
+            "job_id": "20fecd43",
+            "job_name": "test_job",
+            "status": "failed",
+            "submitted_at": "2026-01-01T04:30:12.108872",
+            "script": "/home/xux/Desktop/CycPepMCP/CycPepMCP/tool-mcps/pharmpapp_mcp/scripts/calculate_descriptors.py",
+            "runtime_seconds": 0.498639
+          }
+        ],
+        "total": 3
+      },
+      "error": null
+    },
+    "Submit Large Descriptor Job": {
+      "status": "passed",
+      "result": {
+        "status": "submitted",
+        "job_id": "b1bb6eb2",
+        "message": "Job submitted. Use get_job_status('b1bb6eb2') to check progress."
+      },
+      "error": null
+    }
+  },
+  "summary": {
+    "total_tests": 9,
+    "passed": 9,
+    "failed": 0,
+    "pass_rate": "100.0%",
+    "issues_found": 0
+  },
+  "issues": []
+}

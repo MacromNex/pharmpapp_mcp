@@ -1,0 +1,334 @@
+{
+  "project_name": "cycpep-tools",
+  "description": "MCP tools for cyclic peptide computational analysis - Permeability prediction and molecular descriptor calculation",
+  "mcp_server_name": "cyclic-peptide-tools",
+  "total_tools": 13,
+  "tools": [
+    {
+      "name": "get_job_status",
+      "category": "job_management",
+      "type": "sync",
+      "description": "Check job progress and status",
+      "example_prompt": "Check the status of job abc12345"
+    },
+    {
+      "name": "get_job_result",
+      "category": "job_management",
+      "type": "sync",
+      "description": "Get completed job results",
+      "example_prompt": "Get the results for job abc12345"
+    },
+    {
+      "name": "get_job_log",
+      "category": "job_management",
+      "type": "sync",
+      "description": "View job execution logs",
+      "example_prompt": "Get the logs for job abc12345"
+    },
+    {
+      "name": "cancel_job",
+      "category": "job_management",
+      "type": "sync",
+      "description": "Cancel running job",
+      "example_prompt": "Cancel job abc12345"
+    },
+    {
+      "name": "list_jobs",
+      "category": "job_management",
+      "type": "sync",
+      "description": "List all jobs with status filter",
+      "example_prompt": "List all my jobs"
+    },
+    {
+      "name": "cleanup_old_jobs",
+      "category": "job_management",
+      "type": "sync",
+      "description": "Remove old completed jobs",
+      "example_prompt": "Clean up jobs older than 30 days"
+    },
+    {
+      "name": "calculate_cyclic_peptide_descriptors",
+      "category": "analysis",
+      "type": "sync",
+      "description": "Calculate molecular descriptors for cyclic peptides using RDKit",
+      "example_prompt": "Calculate descriptors for @examples/data/demo_cyclic_peptides.smi"
+    },
+    {
+      "name": "predict_cyclic_peptide_permeability",
+      "category": "analysis",
+      "type": "sync",
+      "description": "Predict permeability with single model",
+      "example_prompt": "Predict permeability using caco2_c model for @examples/data/\"example for Caco2_C.csv\""
+    },
+    {
+      "name": "submit_batch_analysis",
+      "category": "analysis",
+      "type": "submit",
+      "description": "Multi-model comparison analysis",
+      "example_prompt": "Submit batch analysis for @descriptors.csv using models caco2_c and rrck_c"
+    },
+    {
+      "name": "submit_large_descriptor_calculation",
+      "category": "analysis",
+      "type": "submit",
+      "description": "Large-scale descriptor calculation",
+      "example_prompt": "Submit large descriptor calculation for @large_dataset.smi with 3D descriptors"
+    },
+    {
+      "name": "get_available_models",
+      "category": "utility",
+      "type": "sync",
+      "description": "List available permeability models",
+      "example_prompt": "What permeability models are available?"
+    },
+    {
+      "name": "validate_input_file",
+      "category": "utility",
+      "type": "sync",
+      "description": "Validate SMILES/SDF file",
+      "example_prompt": "Validate the input file @examples/data/demo_cyclic_peptides.smi"
+    },
+    {
+      "name": "get_example_data",
+      "category": "utility",
+      "type": "sync",
+      "description": "List available example data",
+      "example_prompt": "What example data is available for testing?"
+    }
+  ],
+  "scripts": [
+    {
+      "name": "calculate_descriptors.py",
+      "path": "scripts/calculate_descriptors.py",
+      "description": "Calculate molecular descriptors from SMILES/SDF files",
+      "example_command": "python scripts/calculate_descriptors.py --input examples/data/demo_cyclic_peptides.smi --output descriptors.csv"
+    },
+    {
+      "name": "predict_permeability.py",
+      "path": "scripts/predict_permeability.py",
+      "description": "Predict permeability using PharmPapp models",
+      "example_command": "python scripts/predict_permeability.py --input descriptors.csv --model caco2_c --output predictions.csv"
+    },
+    {
+      "name": "batch_analysis.py",
+      "path": "scripts/batch_analysis.py",
+      "description": "Batch analysis and model comparison",
+      "example_command": "python scripts/batch_analysis.py --input descriptors.csv --output batch_results/ --models caco2_c rrck_c"
+    }
+  ],
+  "demo_data": [
+    {
+      "file": "demo_cyclic_peptides.smi",
+      "path": "examples/data/demo_cyclic_peptides.smi",
+      "description": "Sample cyclic peptide SMILES (3 molecules)",
+      "used_by": ["calculate_cyclic_peptide_descriptors"],
+      "molecules": 3
+    },
+    {
+      "file": "example for Caco2_A.csv",
+      "path": "examples/data/example for Caco2_A.csv",
+      "description": "Caco2-A model training data",
+      "used_by": ["predict_cyclic_peptide_permeability"],
+      "molecules": 10
+    },
+    {
+      "file": "example for Caco2_C.csv",
+      "path": "examples/data/example for Caco2_C.csv",
+      "description": "Caco2-C model training data",
+      "used_by": ["predict_cyclic_peptide_permeability"],
+      "molecules": 10
+    },
+    {
+      "file": "example for Caco2_L.csv",
+      "path": "examples/data/example for Caco2_L.csv",
+      "description": "Caco2-L model training data",
+      "used_by": ["predict_cyclic_peptide_permeability"],
+      "molecules": 10
+    },
+    {
+      "file": "example for PAMPA-C.csv",
+      "path": "examples/data/example for PAMPA-C.csv",
+      "description": "PAMPA-C model training data",
+      "used_by": ["predict_cyclic_peptide_permeability"],
+      "molecules": 10
+    },
+    {
+      "file": "example for RRCK-C.csv",
+      "path": "examples/data/example for RRCK-C.csv",
+      "description": "RRCK-C model training data",
+      "used_by": ["predict_cyclic_peptide_permeability"],
+      "molecules": 10
+    }
+  ],
+  "configs": [
+    {
+      "file": "calculate_descriptors_config.json",
+      "path": "configs/calculate_descriptors_config.json",
+      "description": "Configuration for descriptor calculation",
+      "parameters": {
+        "include_3d": false,
+        "include_fingerprints": false,
+        "descriptor_types": ["basic", "topological", "constitutional", "physicochemical"]
+      }
+    },
+    {
+      "file": "predict_permeability_config.json",
+      "path": "configs/predict_permeability_config.json",
+      "description": "Configuration for permeability prediction",
+      "parameters": {
+        "test_size": 0.2,
+        "cross_validation": true,
+        "scale_features": true
+      }
+    },
+    {
+      "file": "batch_analysis_config.json",
+      "path": "configs/batch_analysis_config.json",
+      "description": "Configuration for batch analysis",
+      "parameters": {
+        "models_to_test": ["rrck_c", "pampa_c", "caco2_l", "caco2_c", "caco2_a"],
+        "create_plots": true
+      }
+    },
+    {
+      "file": "default_config.json",
+      "path": "configs/default_config.json",
+      "description": "General default settings",
+      "parameters": {
+        "random_state": 42,
+        "n_jobs": -1
+      }
+    }
+  ],
+  "permeability_models": [
+    {
+      "name": "rrck_c",
+      "full_name": "RRCK-C",
+      "algorithm": "Support Vector Machine (SVR)",
+      "descriptors_required": 103,
+      "description": "RRCK cell line permeability prediction"
+    },
+    {
+      "name": "pampa_c",
+      "full_name": "PAMPA-C",
+      "algorithm": "Random Forest (LightGBM equivalent)",
+      "descriptors_required": 71,
+      "description": "Parallel Artificial Membrane Permeability Assay"
+    },
+    {
+      "name": "caco2_l",
+      "full_name": "Caco2-L",
+      "algorithm": "Random Forest",
+      "descriptors_required": 82,
+      "description": "Caco-2 cell line (Linear peptides)"
+    },
+    {
+      "name": "caco2_c",
+      "full_name": "Caco2-C",
+      "algorithm": "Random Forest",
+      "descriptors_required": 79,
+      "description": "Caco-2 cell line (Cyclic peptides)"
+    },
+    {
+      "name": "caco2_a",
+      "full_name": "Caco2-A",
+      "algorithm": "Random Forest",
+      "descriptors_required": 92,
+      "description": "Caco-2 cell line (All peptides)"
+    }
+  ],
+  "installation": {
+    "prerequisites": [
+      "Conda or Mamba (mamba recommended)",
+      "Python 3.10+",
+      "RDKit (installed via conda-forge)"
+    ],
+    "environment_path": "./env",
+    "key_commands": [
+      "mamba create -p ./env python=3.10 -y",
+      "mamba install -p ./env -c conda-forge rdkit -y",
+      "mamba run -p ./env pip install --force-reinstall --no-cache-dir fastmcp"
+    ]
+  },
+  "mcp_installation": {
+    "recommended_method": "fastmcp",
+    "commands": [
+      "mamba run -p ./env fastmcp install src/server.py --name cycpep-tools",
+      "claude mcp add cycpep-tools -- $(pwd)/env/bin/python $(pwd)/src/server.py"
+    ]
+  },
+  "example_workflows": [
+    {
+      "name": "Quick Descriptor Calculation",
+      "steps": [
+        "Calculate molecular descriptors for @examples/data/demo_cyclic_peptides.smi",
+        "Expected: CSV with 144 descriptors per molecule"
+      ]
+    },
+    {
+      "name": "Permeability Prediction",
+      "steps": [
+        "Predict permeability using caco2_c model for example data",
+        "Expected: Predicted values with R² and RMSE metrics"
+      ]
+    },
+    {
+      "name": "Multi-Model Comparison",
+      "steps": [
+        "Submit batch analysis for multiple models",
+        "Monitor job status",
+        "Retrieve comparative results"
+      ]
+    },
+    {
+      "name": "End-to-End Pipeline",
+      "steps": [
+        "Calculate descriptors from SMILES",
+        "Submit batch analysis with multiple models",
+        "Monitor progress and retrieve results"
+      ]
+    }
+  ],
+  "known_limitations": [
+    "Descriptor compatibility: RDKit vs MOE2D descriptors",
+    "Small demo datasets show poor model performance (expected)",
+    "Model coverage limited to 5 pre-trained PharmPapp models"
+  ],
+  "file_formats": {
+    "input": ["SMILES (.smi)", "SDF (.sdf)", "CSV (descriptors)"],
+    "output": ["CSV (descriptors/predictions)", "PNG (plots)", "JSON (metadata)"]
+  },
+  "performance": {
+    "sync_api_limit": "< 1000 molecules, < 10 minutes",
+    "submit_api_use": "> 1000 molecules, > 10 minutes",
+    "resource_usage": {
+      "basic_descriptors": "~100MB, ~2 min/1000 molecules",
+      "3d_descriptors": "~500MB, ~15 min/1000 molecules",
+      "model_prediction": "~50MB, ~1 min/1000 molecules"
+    }
+  },
+  "validation_status": {
+    "all_paths_verified": true,
+    "scripts_tested": true,
+    "mcp_server_loads": true,
+    "example_data_present": true,
+    "configs_present": true
+  },
+  "created": "2026-01-01",
+  "readme_sections": [
+    "Overview",
+    "Installation",
+    "Local Usage (Scripts)",
+    "MCP Server Installation",
+    "Using with Claude Code",
+    "Using with Gemini CLI",
+    "Available Tools",
+    "Examples",
+    "Demo Data",
+    "Configuration Files",
+    "Troubleshooting",
+    "Development",
+    "Performance Guidelines",
+    "API Reference Summary"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "setup_commands": [
+    "(command -v mamba >/dev/null 2>&1 && mamba create -p ./env python=3.10 -y) || (command -v conda >/dev/null 2>&1 && conda create -p ./env python=3.10 -y) || (echo \"Warning: Neither mamba nor conda found, creating venv instead\" && python3 -m venv ./env)",
+    "(command -v mamba >/dev/null 2>&1 && mamba run -p ./env pip install pandas numpy scikit-learn matplotlib seaborn tqdm loguru click) || ./env/bin/pip install pandas numpy scikit-learn matplotlib seaborn tqdm loguru click",
+    "(command -v mamba >/dev/null 2>&1 && mamba install -p ./env -c conda-forge rdkit -y) || ./env/bin/pip install rdkit",
+    "./env/bin/pip install --force-reinstall --no-cache-dir fastmcp"
+  ]
+}
